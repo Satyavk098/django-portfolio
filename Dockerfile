@@ -10,6 +10,8 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . /app/
 
+RUN python manage.py migrate
+
 RUN mkdir -p /app/staticfiles /app/media
 RUN python manage.py migrate \
 && python manage.py createsuperuser --noinput || true \

