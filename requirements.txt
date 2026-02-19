@@ -1,8 +1,8 @@
 Django>=4.2
+Django
 gunicorn
-whitenoise
-Pillow
 dj-database-url
 psycopg2-binary
-dj-database-url
+Pillow
+
 
