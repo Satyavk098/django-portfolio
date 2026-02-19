@@ -1,0 +1,154 @@
+/* ===== RESET & BASE ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    background-color: #111827;
+    padding: 14px 0;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #e5e7eb;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 6px;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #2563eb;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== LISTS ===== */
+ul {
+    padding-left: 20px;
+}
+
+/* ===== PROJECT CARDS ===== */
+.card {
+    padding: 18px;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 16px;
+    border-left: 4px solid #2563eb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card a {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1f2937;
+}
+
+.card a:hover {
+    color: #2563eb;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 4px;
+    background: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #1e40af;
+}
+
+/* ===== FORMS ===== */
+form input,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #1e40af;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ===== SMALL POLISH ===== */
+html {
+    scroll-behavior: smooth;
+}

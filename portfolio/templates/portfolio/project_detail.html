@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}{{ project.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ project.title }}</h2>
+
+{% if project.image %}
+    <img src="{{ project.image.url }}" width="400">
+{% endif %}
+
+<p>{{ project.description }}</p>
+<p><b>Tech:</b> {{ project.tech_stack }}</p>
+
+{% if project.github_link %}
+    <a href="{{ project.github_link }}" target="_blank">GitHub</a>
+{% endif %}
+
+<br><br>
+<a href="{% url 'projects' %}">← Back to Projects</a>
+{% endblock %}

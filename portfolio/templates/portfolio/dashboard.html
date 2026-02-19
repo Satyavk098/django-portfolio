@@ -1,0 +1,19 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<p><a href="{% url 'project_add' %}">Add New Project</a></p>
+
+<ul>
+{% for project in projects %}
+    <li>
+        {{ project.title }}
+        | <a href="{% url 'project_edit' project.id %}">Edit</a>
+        | <a href="{% url 'project_delete' project.id %}">Delete</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

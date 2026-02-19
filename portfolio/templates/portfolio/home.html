@@ -1,0 +1,77 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h1>Satya – Django Developer</h1>
+
+<p>
+I am a backend-focused web developer specializing in Django, Django REST Framework,
+and PostgreSQL. I enjoy building secure, scalable, and maintainable web applications.
+</p>
+
+<hr>
+
+<h2>Resume</h2>
+
+<p>
+    <a href="{{ MEDIA_URL }}resume/resume.pdf" target="_blank">
+        Download Resume
+    </a>
+</p>
+
+<hr>
+
+<h2>What I Do</h2>
+<ul>
+    <li>Backend development with Django</li>
+    <li>REST API development using DRF</li>
+    <li>Authentication & authorization systems</li>
+    <li>Database design with PostgreSQL</li>
+</ul>
+
+<hr>
+
+<h2>Skills</h2>
+<ul>
+    <li>Python</li>
+    <li>Django</li>
+    <li>Django REST Framework</li>
+    <li>PostgreSQL</li>
+    <li>HTML</li>
+</ul>
+
+<hr>
+
+<h2>Recent Projects</h2>
+<ul>
+{% for project in projects %}
+    <li>
+        <a href="{% url 'project_detail' project.slug %}">
+            {{ project.title }}
+        </a>
+    </li>
+{% empty %}
+    <li>No projects added yet.</li>
+{% endfor %}
+</ul>
+
+<p>
+    <a href="{% url 'projects' %}">View all projects</a>
+</p>
+
+<hr>
+
+<h2>Explore</h2>
+<ul>
+    <li><a href="{% url 'contact' %}">Contact Me</a></li>
+    <li><a href="{% url 'projects' %}">Projects</a></li>
+    <li><a href="/api/projects/">Projects API</a></li>
+
+    {% if user.is_staff %}
+        <li><a href="{% url 'dashboard' %}">Admin Dashboard</a></li>
+    {% endif %}
+</ul>
+
+{% endblock %}
