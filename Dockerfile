@@ -11,8 +11,9 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . /app/
 
 RUN mkdir -p /app/staticfiles /app/media
-RUN python manage.py migrate && python manage.py collectstatic --noinput
-
+RUN python manage.py migrate \
+&& python manage.py createsuperuser --noinput || true \
+&& python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
