@@ -29,7 +29,8 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [
-    ".railway.app",
+    "django-portfolio-production-cd5c.up.railway.app",
+    ".up.railway.app",
 ]
 
 SESSION_COOKIE_SECURE = True
