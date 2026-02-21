@@ -12,4 +12,4 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
-CMD gunicorn --bind 0.0.0.0:8080 --workers 1 --log-level debug wsgiref.simple_server:demo_app
+CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8080"]
