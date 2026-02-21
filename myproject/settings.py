@@ -28,10 +28,12 @@ DEBUG = False
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = [
-    "django-portfolio-production-cd5c.up.railway.app",
-    ".up.railway.app",
-]
+# ALLOWED_HOSTS = [
+#     "django-portfolio-production-cd5c.up.railway.app",
+#     ".up.railway.app",
+# ]
+ALLOWED_HOSTS = ["*"]
+
 
 # Application definition
 
