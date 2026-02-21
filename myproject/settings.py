@@ -24,17 +24,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [
     "django-portfolio-production-cd5c.up.railway.app",
     ".up.railway.app",
 ]
-
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -154,6 +151,5 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.railway.app",
 ]
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
