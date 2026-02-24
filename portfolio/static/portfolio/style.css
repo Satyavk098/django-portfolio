@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: "Inter", "Segoe UI", Arial, sans-serif;
@@ -11,10 +15,11 @@ body {
     line-height: 1.6;
 }
 
+
 /* ===== NAVBAR ===== */
 nav {
     background-color: #111827;
-    padding: 14px 0;
+    padding: 18px 0;
 }
 
 .nav-container {
@@ -31,11 +36,13 @@ nav a {
     text-decoration: none;
     margin-left: 18px;
     font-size: 15px;
+    font-weight: 500;
 }
 
 nav a:hover {
     color: #ffffff;
 }
+
 
 /* ===== MAIN CONTAINER ===== */
 .container {
@@ -45,6 +52,23 @@ nav a:hover {
     background: #ffffff;
     border-radius: 8px;
 }
+
+
+/* ===== HERO SECTION ===== */
+.hero {
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #4b5563;
+}
+
 
 /* ===== HEADINGS ===== */
 h1 {
@@ -60,6 +84,7 @@ h2 {
     padding-bottom: 6px;
 }
 
+
 /* ===== LINKS ===== */
 a {
     color: #2563eb;
@@ -69,17 +94,26 @@ a:hover {
     text-decoration: underline;
 }
 
+
 /* ===== LISTS ===== */
 ul {
     padding-left: 20px;
 }
+
+
+/* ===== PROJECT GRID ===== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
 
 /* ===== PROJECT CARDS ===== */
 .card {
     padding: 18px;
     border-radius: 8px;
     background: #ffffff;
-    margin-bottom: 16px;
     border-left: 4px solid #2563eb;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -101,30 +135,51 @@ ul {
     color: #2563eb;
 }
 
+
 /* ===== BUTTONS ===== */
 .btn {
     display: inline-block;
-    padding: 8px 14px;
-    border-radius: 4px;
+    padding: 10px 16px;
+    border-radius: 6px;
     background: #2563eb;
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
     background: #1e40af;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
 }
+
+.btn.secondary {
+    background: #e5e7eb;
+    color: #1f2937;
+    box-shadow: none;
+}
+
+.btn.secondary:hover {
+    background: #d1d5db;
+}
+
 
 /* ===== FORMS ===== */
 form input,
 form textarea {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
+    padding: 10px;
+    margin-bottom: 14px;
     border: 1px solid #d1d5db;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 14px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
 }
 
 form button {
@@ -132,13 +187,38 @@ form button {
     color: white;
     border: none;
     padding: 10px 16px;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 form button:hover {
     background: #1e40af;
 }
+
+
+/* ===== ERRORS & MESSAGES ===== */
+.error {
+    color: #dc2626;
+    margin-bottom: 12px;
+}
+
+.success {
+    color: #16a34a;
+    margin-bottom: 12px;
+}
+
+
+/* ===== ADMIN BADGE ===== */
+.badge {
+    background: #111827;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-left: 6px;
+}
+
 
 /* ===== FOOTER ===== */
 footer {
@@ -148,7 +228,15 @@ footer {
     font-size: 14px;
 }
 
-/* ===== SMALL POLISH ===== */
-html {
-    scroll-behavior: smooth;
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
 }
