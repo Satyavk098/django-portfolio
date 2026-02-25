@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+  <h1>Admin Dashboard</h1>
+  <a href="{% url 'project_add' %}" class="btn primary">+ Add New Project</a>
+</div>
+
+<div class="dashboard-grid">
+  {% for project in projects %}
+    <div class="dashboard-card">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description|truncatechars:120 }}</p>
+
+      <div class="dashboard-actions">
+        <a href="{% url 'project_edit' project.id %}" class="btn small">Edit</a>
+
+        <form
+          action="{% url 'project_delete' project.id %}"
+          method="post"
+          style="display:inline;"
+        >
+          {% csrf_token %}
+          <button type="submit" class="btn danger small">
+            Delete
+          </button>
+        </form>
+      </div>
+    </div>
+  {% empty %}
+    <p>No projects found.</p>
+  {% endfor %}
+</div>
+
+{% endblock %}

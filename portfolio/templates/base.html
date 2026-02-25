@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Portfolio{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+
+    <!-- LEFT -->
+    <div class="nav-left">
+      <a href="{% url 'home' %}" class="logo">Portfolio</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="nav-right">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'projects' %}">Projects</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'login' %}">Login</a>
+      
+      {% if user.is_staff %}
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+      {% endif %}
+    </div>
+
+  </div>
+</nav>
+
+<main class="container">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  © {% now "Y" %} Portfolio · Built with Django
+</footer>
+
+</body>
+</html>
