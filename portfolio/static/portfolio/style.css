@@ -240,3 +240,40 @@ footer {
         font-size: 28px;
     }
 }
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.hero-text {
+  max-width: 600px;
+  margin: 0 auto 24px;
+  color: #374151;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.featured-projects {
+  margin-top: 60px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}

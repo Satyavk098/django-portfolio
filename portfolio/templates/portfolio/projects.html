@@ -3,18 +3,17 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
-<h2>My Projects</h2>
+<h1>Projects</h1>
 
-<ul>
-{% for project in projects %}
+<div class="project-grid">
+  {% for project in projects %}
     <div class="card">
-        <a href="{% url 'project_detail' project.slug %}">
-            {{ project.title }}
-        </a>
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description|truncatechars:120 }}</p>
+      <a href="{% url 'project_detail' project.slug %}">
+        View details →
+      </a>
     </div>
-{% empty %}
-    <li>No projects added yet.</li>
-{% endfor %}
-</ul>
-
+  {% endfor %}
+</div>
 {% endblock %}
