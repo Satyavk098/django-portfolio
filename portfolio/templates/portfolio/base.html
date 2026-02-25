@@ -3,35 +3,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{% block title %}Portfolio{% endblock %}</title>
+  <title>{% block title %}Satya | Portfolio{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
-<nav>
-  <div>
-  <a href="{% url 'projects' %}">Projects</a>
-  <nav>
+<nav class="navbar">
   <div class="nav-container">
-    <div class="logo">
-      <a href="{% url 'home' %}">Satya</a>
-    </div>
+    <a href="{% url 'home' %}" class="logo">Satya</a>
 
     <div class="nav-links">
       <a href="{% url 'home' %}">Home</a>
       <a href="{% url 'projects' %}">Projects</a>
       <a href="{% url 'contact' %}">Contact</a>
-      <a href="{% static 'portfolio/resume/resume.pdf' %}" target="_blank">Resume</a>
     </div>
   </div>
-</nav>
-</div>
 </nav>
 
 <main class="container">
   {% block content %}{% endblock %}
 </main>
+
+<footer class="footer">
+  © {{ now|date:"Y" }} Satya · Built with Django
+</footer>
+
 </body>
 </html>

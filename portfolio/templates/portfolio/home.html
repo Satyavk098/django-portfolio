@@ -1,43 +1,37 @@
-{% extends 'portfolio/base.html' %}
-{% load static %}
+{% extends "portfolio/base.html" %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 
 <section class="hero">
-  <h1>Hi, I’m Satya 👋</h1>
-  <p class="subtitle">
-    Django Developer · Backend Engineer
-  </p>
+  <h1>Hi, I’m Satyam 👋</h1>
+  <p class="subtitle">Django Developer · Backend Engineer</p>
 
   <p class="hero-text">
     I build clean, scalable web applications using Django, REST APIs,
     and modern backend practices.
   </p>
 
-  <div class="hero-actions">
-    <a href="{% url 'projects' %}" class="btn">View Projects</a>
-    <a href="{% static 'portfolio/resume/resume.pdf' %}" class="btn secondary">
-      Download Resume
-    </a>
-  </div>
+  <a href="{% url 'projects' %}" class="btn">View Projects</a>
 </section>
 
 <section class="featured-projects">
   <h2>Featured Projects</h2>
 
-  {% for project in projects %}
-    <div class="card">
-      <h3>{{ project.title }}</h3>
-      <p>{{ project.description|truncatechars:140 }}</p>
-      <a href="{% url 'project_detail' project.slug %}">
-        View project →
-      </a>
-    </div>
-  {% empty %}
-    <p>No projects yet.</p>
-  {% endfor %}
+  <div class="project-grid">
+    {% for project in projects %}
+      <div class="card">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description|truncatechars:140 }}</p>
+        <a href="{% url 'project_detail' project.slug %}">
+          View project →
+        </a>
+      </div>
+    {% empty %}
+      <p>No projects added yet.</p>
+    {% endfor %}
+  </div>
 </section>
 
 {% endblock %}
